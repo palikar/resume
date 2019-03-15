@@ -1,0 +1,239 @@
+\documentclass[letterpaper,10pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[pdftex, hidelinks]{hyperref}
+\usepackage{fancyhdr}
+
+\usepackage[charter]{mathdesign} % Bitstream Charter
+% \usepackage{newpxtext,newpxmath} % Palatino
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.50in}
+\addtolength{\evensidemargin}{-0.50in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-6pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[2]{
+  \item\small{
+    \textbf{#1}{: #2 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeItemNoBullet}[2]{
+  \item[]\small{
+    \hspace{-9pt}\textbf{#1}{: #2 \vspace{-6pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item[]
+  \begin{tabular*}{0.98\textwidth}{l@{\extracolsep{\fill}}r}
+      \hspace{-10pt}\textbf{#1} & #2 \\
+      \hspace{-10pt}\textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+
+\renewcommand{\labelitemii}{$\circ$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+% custom commands
+\newcommand{\shorterSection}[1]{\vspace{-10pt}\section{#1}}
+
+%-------------------------------------------
+%%%%%%  CV STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING-----------------
+\begin{center}
+  \small \textbf{\href{palikar.github.io}{\huge Stanislav Arnaudov}} \\  \href{mailto:stanislav.arnaudov@kit.edu}{\color{blue}\underline{stanislav.arnaudov@kit.edu@kit.edu}} $\vert$
+  
+  LinkedIn: \href{https://www.linkedin.com/in/stanislav-arnaudov-37b475164/}{\color{blue}\underline{Arnaudov}} $\vert$
+  Github: \href{https://github.com/palikar}{\color{blue}\underline{Arnaudov}} \\
+  \small Karlsruhe, Germany
+\end{center}
+
+%-----------EDUCATION-----------------
+\shorterSection{Education}
+
+\resumeSubHeadingListStart
+
+
+\resumeSubheading
+{Karlsruhe Institute of Technology}{Karlsruhe, Germany}
+{Master of Science in Informatics}{Expected Sep 2020}{}
+
+
+\resumeSubheading
+{Karlsruhe Institute of Technology}{Karlsruhe, Germany}
+{Bachelor of Technology in Informatics; Average grade: 1.6 }{Sep 2015 - Sep 2018}
+\resumeItemNoBullet{Relevant Coursework}{Linear Algebra \& Design of Algorithms and Data Structures, Operating Systems, Software Engineering, Cognitive Systems, Computer Graphics}
+
+
+\resumeSubHeadingListEnd
+
+%-----------SKILLS-----------------
+\shorterSection{Skills}
+\resumeSubHeadingListStart
+
+  \small
+    \item{
+     \textbf{Languages}{: C++, Python, Java, JavaScript \textbackslash CSS \textbackslash HTML, SQL, Emacs-Lisp}
+   }
+ \item{
+     \textbf{Technologies}{: Git, Cmake, make, g++, Robot Operating System(ROS), RabbitMQ, JavaFX/Java-Swing, JUnit, Maven, Frontend(AngularJS, VueJS), Backend(NodeJS, Express), LaTeX, Emacs Org-mode, UML}
+   }
+   
+   \vspace{-5pt}
+ \item{
+     \textbf{Libraries}{: TensorFlow, PyTorch, Keras, Scikit-Learn, Numpy, Pandas, Spark, Jupyter, OpenCV, PCL(Point Cloud Library)}
+   }
+   
+\resumeSubHeadingListEnd
+
+%-----------EXPERIENCE-----------------
+\shorterSection{Experience}
+  \resumeSubHeadingListStart
+
+  
+    \resumeSubheading
+      {Fraunhofer IOSB}{Karlsruhe Germany}
+      {Software Engineer\textbackslash Research Assistant}{Sep 2017 - Present}
+      \resumeItemListStart
+        \resumeItem{Image Processing}
+        {Working with OpenCV, Implementing detection and tracking of laser point}
+        \resumeItem{Point Clouds Processing}
+        {Working with PCL, processing and using point cloud information for }
+        \resumeItemListEnd
+
+
+    \resumeSubheading
+      {Karlsruhe Institute of Technology}{Karlsruhe Germany}
+      {Teaching Assistant in Linear Algebra}{Sep 2016 - Mar 2017}
+      \resumeItemListStart
+        \resumeItem{Responsibilities}
+          {Checking homeworks and giving a class once a week.}
+      \resumeItemListEnd
+          
+          
+    \resumeSubheading
+      {Karlsruhe Institute of Technology}{Karlsruhe Germany}
+      {Teaching Assistant in Algorithms and Data Structures}{Apr 2017 - Jul 2017}
+      \resumeItemListStart
+        \resumeItem{Responsibilities}
+          {Checking homeworks and giving a class once a week.}
+      \resumeItemListEnd
+
+    % \resumeSubheading
+    %   {OSSCube}{New Delhi, India}
+    %   {Software Engineer Intern}{May 2015 - Aug 2015}
+    %   \resumeItemListStart
+    %     \resumeItem{Squeek Twitter iOS}
+    %       {Designed and developed Twitter client using Fabric SDK}
+    %   \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+  % -----------PROJECTS-----------------
+  \shorterSection{Projects}
+  \resumeSubHeadingListStart
+
+  \resumeSubItem{Bachelor Thesis}
+  {Creating and Evaluating Stochastic Regression Models on the Basis of Heterogeneous Sensor Networks for Air Pollution
+    \vspace{-5pt}
+    \begin{itemize}
+    \item Implementing stochastic regression models with Tensorflow, Edward and GPFlow
+    \item Evaluating stochastic regression models on the basis or proper scoring rules
+    \end{itemize}
+  }
+
+  \resumeSubItem{Practical Course in Software Engineering}
+  {NGram++
+    \vspace{-5pt}
+    \begin{itemize}
+    \item Working in a team of 5 people.
+    \end{itemize}
+  }
+
+  \resumeSubItem{Practical Course in Applied Geometry}
+  {C++ Geometry Library
+    \vspace{-5pt}
+    \begin{itemize}
+    \item Modeling, analysis, reconstruction and simulation of geometric data.
+    \end{itemize}
+  }
+
+  \resumeSubItem{Course Project}
+  {Smart Homeworks 
+    \vspace{-5pt}
+    \begin{itemize}
+    \item Single page application written in VueJS.
+    \end{itemize}
+  }
+     
+     % \resumeSubItem{ARYouThereYet}{An augmented reality application developed on ARKit with dynamic AR nodes}
+  %   \resumeSubItem{Aspect-based Sentiment Analysis}
+  %     {Implemented Deep Memory Networks to achieve 78.66\% accuracy, 0.69 F1-score on SemEval 2014 dataset}
+  %   \resumeSubItem{Iris Speech to Code}
+  %     {A natural speech to code converter for aiding programmers with disabilities
+  %       \vspace{-5pt}
+  %       \begin{itemize}
+  %           \item Trained an intent classification model in Microsoft Luis to classify 15+ classes or commands
+  %           \item Implemented a message passing protocol using RabbitMQ to broker messages between Google API, ElectronJS, and VS Code
+  %       \end{itemize}
+  %     }
+  %       \resumeSubItem{AI Lifeguard}{Trained a 3D-CNN model on Microsoft Azure for action localization on drowning people in swimming pools. Achieved mean IOU score of 0.45}
+  
+  \resumeSubHeadingListEnd
+
+%-----------Addtional Experience & Achievements-----------------
+\shorterSection{Additional Experience \& Achievements}
+% \resumeSubHeadingListStart
+  % \small
+  %   \item{Presented poster on \textit{Tiramisu DenseNet Architecture for Precise Segmentation} for Intel AI at \textbf{CVPR 2018}}
+  %   \vspace{-5pt}
+  %   \item{Selected as an \textbf{Intel AI Student Ambassador} (only 150 students) to research, publish, and share work on machine learning and deep learning}
+  %   \vspace{-5pt}
+  %   \item{Won \textit{Best Microsoft Hack} out of 220 teams at \textbf{HackHarvard 2017}}
+  %   \vspace{-5pt}
+  %   \item{Placed 16/50 at Google Games: Campus Edition 2017 at UIC}
+  %   \vspace{-5pt}
+  %   \item{Won \textit{Best Technical Innovation} award (out of 800 students) at \textbf{Amity University Convocation 2017}}
+  %   \vspace{-5pt}
+  %   \item{Elected as a \textit{Vice-Chair} for \textbf{ACM Amity Student Chapter} out of 800 students at Amity University based on high-achieving and technically strong undergraduate students}
+  % \resumeSubHeadingListEnd
+%-------------------------------------------
+\end{document}
