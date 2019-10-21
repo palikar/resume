@@ -9,9 +9,15 @@
 \usepackage{enumitem}
 \usepackage[pdftex, hidelinks]{hyperref}
 \usepackage{fancyhdr}
+\usepackage[export]{adjustbox}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{wrapfig}
 
 \usepackage[charter]{mathdesign} % Bitstream Charter
 % \usepackage{newpxtext,newpxmath} % Palatino
+
+\pdfpkresolution=450
 
 \pagestyle{fancy}
 \fancyhf{} % clear all header and footer fields
@@ -19,7 +25,6 @@
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
 
-% Adjust margins
 \addtolength{\oddsidemargin}{-0.50in}
 \addtolength{\evensidemargin}{-0.50in}
 \addtolength{\textwidth}{1in}
@@ -32,10 +37,18 @@
 \raggedright
 \setlength{\tabcolsep}{0in}
 
-% Sections formatting
+\newcommand{\roundpic}[4][]{
+  \tikz\node [circle, minimum width = #2,
+    path picture = {
+      \node [#1] at (path picture bounding box.center) {
+        \includegraphics[#3]{#4}};
+    }] {};}
+
+  
 \titleformat{\section}{
   \vspace{-6pt}\scshape\raggedright\large
 }{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
 
 %-------------------------
 % Custom commands
@@ -76,33 +89,45 @@
 
 
 \begin{document}
-
 %----------HEADING-----------------
-\begin{center}
-  \small \textbf{\href{palikar.github.io}{\huge Stanislav Arnaudov}} \\  \href{mailto:stanislav.arnaudov@kit.edu}{\color{blue}\underline{stanislav.arnaudov@kit.edu@kit.edu}} $\vert$
 
-  LinkedIn: \href{https://www.linkedin.com/in/stanislav-arnaudov-37b475164/}{\color{blue}\underline{Arnaudov}} $\vert$
-  Github: \href{https://github.com/palikar}{\color{blue}\underline{Arnaudov}} \\
-  \small Karlsruhe, Germany
-\end{center}
+\begin{figure}[!htb]
+  \begin{minipage}{.5\textwidth}
+    \begin{flushleft}
+      \vspace{1.3cm}
+      \small \textbf{\href{palikar.github.io}{\huge Stanislav Arnaudov}} \\  \href{mailto:stanislav.arnaudov@kit.edu}{\color{blue}\underline{stanislav.arnaudov@kit.edu@kit.edu}} $\vert$
+      LinkedIn: \href{https://www.linkedin.com/in/stanislav-arnaudov-37b475164/}{\color{blue}\underline{Arnaudov}} $\vert$\\
+      Github: \href{https://github.com/palikar}{\color{blue}\underline{Arnaudov}} \\
+      \small Karlsruhe, Germany\\
+    \end{flushleft}
+  \end{minipage}%
+  \begin{minipage}{0.5\textwidth}
+    \begin{flushright}
+      \roundpic[xshift=0cm,yshift=-0.5cm]{3.5cm}{width=0.37\linewidth, height=0.2\textheight}{fancy_stanche.jpg}
+    \end{flushright}
+  \end{minipage}
+\end{figure}
 
+  
 %-----------EDUCATION-----------------
 \shorterSection{Education}
-
 \resumeSubHeadingListStart
 
-
 \resumeSubheading
-{Karlsruhe Institute of Technology}{Karlsruhe, Germany}
 {Master of Science in Informatics}{Expected Sep 2020}
+{Karlsruhe Institute of Technology}{Karlsruhe, Germany}
+\resumeItemListStart
+\resumeItem{Relevant Coursework}{Image processing, Computer Vision, Machine Learning, Software Engineering}
+\resumeItemListEnd
 
-\resumeItemNoBullet{Relevant Coursework}{Image processing, Computer Vision, Machine Learning}
-
+\vspace{10pt}
 
 \resumeSubheading
+{Bachelor of Technology in Informatics}{Sep 2015 - Sep 2018}
 {Karlsruhe Institute of Technology}{Karlsruhe, Germany}
-{Bachelor of Technology in Informatics; Average grade: 1.6 }{Sep 2015 - Sep 2018}
-\resumeItemNoBullet{Relevant Coursework}{Linear Algebra \& Design of Algorithms and Data Structures, Operating Systems, Software Engineering, Cognitive Systems, Computer Graphics}
+\resumeItemListStart
+\resumeItem{Relevant Coursework}{Linear Algebra, Algorithms and Data Structures, Operating Systems, Software Engineering, Cognitive Systems, Computer Graphics, Mobile Computing, Databases}
+\resumeItemListEnd
 
 
 \resumeSubHeadingListEnd
@@ -110,130 +135,128 @@
 %-----------SKILLS-----------------
 \shorterSection{Skills}
 \resumeSubHeadingListStart
+\resumeSubheading{Programming Languages}{}{\vspace{-5pt}}{}
+C++, Python, Java, JavaScript\textbackslash CSS\textbackslash HTML, SQL, Emacs-Lisp
+\resumeSubheading{Technologies}{}{\vspace{-5pt}}{}
+Linux, Git, CMake, make, Robot Operating System (ROS), RabbitMQ, JavaFX/Java-Swing, JUnit, Maven, Frontend (AngularJS, VueJS), Backend (NodeJS, Express, Flask), LaTeX, Emacs Org-mode, UML
+\resumeSubheading{Libraries}{}{\vspace{-5pt}}{}
 
-  \small
-    \item{
-     \textbf{Languages}{: C++, Python, Java, JavaScript\textbackslash CSS\textbackslash HTML, SQL, Emacs-Lisp}
-   }
- \item{
-     \textbf{Technologies}{: Git, Cmake, make, g++, Robot Operating System(ROS), RabbitMQ, JavaFX/Java-Swing, JUnit, Maven, Frontend (AngularJS, VueJS), Backend (NodeJS, Express), LaTeX, Emacs Org-mode, UML}
-   }
-   \vspace{-5pt}
- \item{
-     \textbf{Libraries}{: TensorFlow, Keras, Scikit-Learn, Numpy, Pandas, Jupyter, OpenCV, PCL (Point Cloud Library)}
-   }
+\vspace{-5pt}
+PyTorch, TensorFlow, Keras, Scikit-Learn, Numpy, Pandas, PyTorch, OpenCV, PCL (Point Cloud Library), OpenNI
+\resumeSubHeadingListEnd
+\vspace{7pt}
+
+%-----------EXPERIENCE-----------------
+\shorterSection{Experience}
+\resumeSubHeadingListStart
+
+\resumeSubheading
+{Software Engineer\textbackslash Research Assistant}{Sep 2017 - Present}
+{Fraunhofer IOSB}{Karlsruhe Germany}
+\resumeItemListStart
+\resumeItem{Image Processing}
+{Working with OpenCV, implementing detection and tracking of a laser point.}
+\resumeItem{Point Cloud Processing}
+{Working with PCL, processing and using point-cloud information for automatic visual inspection systems.}
+\resumeItem{Software Development}
+{Developing and extending visual inspection systems for industrial applications.}
+\resumeItemListEnd
+
+\resumeSubheading
+{Teaching Assistant in Linear Algebra}{Sep 2016 - Mar 2017}
+{Karlsruhe Institute of Technology}{Karlsruhe Germany}
+\resumeItemListStart
+\resumeItem{Responsibilities}
+{Checking homeworks and giving a class once a week.}
+\resumeItemListEnd
+
+\resumeSubheading
+{Teaching Assistant in Algorithms and Data Structures}{Apr 2017 - Jul 2017}
+{Karlsruhe Institute of Technology}{Karlsruhe Germany}
+\resumeItemListStart
+\resumeItem{Responsibilities}
+{Checking homeworks and giving a class once a week.}
+\resumeItemListEnd
+
+\resumeSubheading
+{Volunteer}{Jul 2018}
+{Karlsruhe Institute of Technology}{Karlsruhe Germany}
+\resumeItemListStart
+\resumeItem{Responsibilities}
+{Helping with the organization of the \href{https://cg.ivd.kit.edu/egsr18/}{\color{blue}\underline{EGSR 2018}} computer graphics conference.}
+\resumeItemListEnd
 
 \resumeSubHeadingListEnd
 
-%-----------EXPERIENCE-----------------
-  \shorterSection{Experience}
-  \resumeSubHeadingListStart
 
+%-----------PROJECTS-----------------
+\shorterSection{Projects}
+\resumeSubHeadingListStart
 
-  \resumeSubheading
-  {Fraunhofer IOSB}{Karlsruhe Germany}
-  {Software Engineer\textbackslash Research Assistant}{Sep 2017 - Present}
-  \resumeItemListStart
-  \resumeItem{Image Processing}
-  {Working with OpenCV, Implementing detection and tracking of laser point}
-  \resumeItem{Point Cloud Processing}
-  {Working with PCL, processing and using point cloud information for }
-  \resumeItemListEnd
+\resumeSubItem{Bachelor Thesis}
+{Creating and Evaluating Stochastic Regression Models on the Basis of Heterogeneous Sensor Networks for Air Pollution
+  \vspace{-5pt}
+  \begin{itemize}
+  \item Implementing stochastic regression models with Tensorflow, Edward and GPFlow.
+  \item Evaluating stochastic regression models on the basis or proper scoring rules
+  \item Writing out a thesis and presenting the collected results.
+  \end{itemize}
+}
 
+\resumeSubItem{Practical Course in Software Engineering}
+{NGram++
+  \vspace{-5pt}
+  \begin{itemize}
+  \item Developing a single page application for analyzing and visualizing time series data.
+  \item Designing and implementing the architecture of the application.
+  \item Working in a team of 5 people.
+  \end{itemize}
+}
 
-  \resumeSubheading
-  {Karlsruhe Institute of Technology}{Karlsruhe Germany}
-  {Teaching Assistant in Linear Algebra}{Sep 2016 - Mar 2017}
-  \resumeItemListStart
-  \resumeItem{Responsibilities}
-  {Checking homeworks and giving a class once a week.}
-  \resumeItemListEnd
+\resumeSubItem{Practical Course in Applied Geometry}
+{C++ Geometry Library
+  \vspace{-5pt}
+  \begin{itemize}
+  \item Modeling, analysis, reconstruction and simulation of geometric data.
+  \item Extending a library by analyzing and implementing algorithms for B-splines, parallel curves, tensors surfaces and curvature visualization.
+  \end{itemize}
+}
 
+\resumeSubItem{Course Project}
+{Smart Homeworks
+  \vspace{-5pt}
+  \begin{itemize}
+  \item Single page application for helping with the organization of homework assignments.\@
+  \item Written in VueJS.\@
+  \end{itemize}
+}
 
-  \resumeSubheading
-  {Karlsruhe Institute of Technology}{Karlsruhe Germany}
-  {Teaching Assistant in Algorithms and Data Structures}{Apr 2017 - Jul 2017}
-  \resumeItemListStart
-  \resumeItem{Responsibilities}
-  {Checking homeworks and giving a class once a week.}
-  \resumeItemListEnd
+\resumeSubItem{Co-Maintainer of an Emacs package}
+{\href{https://github.com/jaypei/emacs-neotree/}{\color{blue}\underline{Neotree}}
+  \vspace{-5pt}
+  \begin{itemize}
+  \item Neotree - tree file browser for Emacs.
+  \item Fixing bugs, implementing new features and helping with issues on the GitHub repository.
+  \end{itemize}
+}
 
-
-  \resumeSubheading
-  {Karlsruhe Institute of Technology}{Karlsruhe Germany}
-  {Volunteer}{Jul 2018}
-  \resumeItemListStart
-  \resumeItem{Responsibilities}
-  {Helping with the organization of the \href{https://cg.ivd.kit.edu/egsr18/}{\color{blue}\underline{EGSR 2018}} computer graphics conference.}
-  \resumeItemListEnd
-
-
-  \resumeSubHeadingListEnd
-
-  % -----------PROJECTS-----------------
-  \shorterSection{Projects}
-  \resumeSubHeadingListStart
-
-  \resumeSubItem{Bachelor Thesis}
-  {Creating and Evaluating Stochastic Regression Models on the Basis of Heterogeneous Sensor Networks for Air Pollution
-    \vspace{-5pt}
-    \begin{itemize}
-    \item Implementing stochastic regression models with Tensorflow, Edward and GPFlow.
-    \item Evaluating stochastic regression models on the basis or proper scoring rules
-    \end{itemize}
-  }
-
-  \resumeSubItem{Practical Course in Software Engineering}
-  {NGram++
-    \vspace{-5pt}
-    \begin{itemize}
-    \item Working in a team of 5 people.
-    \end{itemize}
-  }
-
-  \resumeSubItem{Practical Course in Applied Geometry}
-  {C++ Geometry Library
-    \vspace{-5pt}
-    \begin{itemize}
-    \item Modeling, analysis, reconstruction and simulation of geometric data.
-    \end{itemize}
-  }
-
-  \resumeSubItem{Course Project}
-  {Smart Homeworks
-    \vspace{-5pt}
-    \begin{itemize}
-    \item Single page application written in VueJS.\@
-    \end{itemize}
-  }
-
-  \resumeSubItem{Co-Maintainer of an Emacs package}
-  {\href{https://github.com/jaypei/emacs-neotree/}{\color{blue}\underline{Neotree}}
-    \vspace{-5pt}
-    \begin{itemize}
-    \item Neotree - tree file browser for Emacs.
-    \item Fixing bugs, implementing new features and helping with issues on the GitHub repository.
-    \end{itemize}
-  }
-
-  
-  \resumeSubHeadingListEnd
+\resumeSubHeadingListEnd
 
 %-----------Addtional Experience & Achievements-----------------
 \shorterSection{Additional Experience \& Achievements}
-% \resumeSubHeadingListStart
-  % \small
-  %   \item{Presented poster on \textit{Tiramisu DenseNet Architecture for Precise Segmentation} for Intel AI at \textbf{CVPR 2018}}
-  %   \vspace{-5pt}
-  %   \item{Selected as an \textbf{Intel AI Student Ambassador} (only 150 students) to research, publish, and share work on machine learning and deep learning}
-  %   \vspace{-5pt}
-  %   \item{Won \textit{Best Microsoft Hack} out of 220 teams at \textbf{HackHarvard 2017}}
-  %   \vspace{-5pt}
-  %   \item{Placed 16/50 at Google Games: Campus Edition 2017 at UIC}
-  %   \vspace{-5pt}
-  %   \item{Won \textit{Best Technical Innovation} award (out of 800 students) at \textbf{Amity University Convocation 2017}}
-  %   \vspace{-5pt}
-  %   \item{Elected as a \textit{Vice-Chair} for \textbf{ACM Amity Student Chapter} out of 800 students at Amity University based on high-achieving and technically strong undergraduate students}
-  % \resumeSubHeadingListEnd
+
+\resumeSubHeadingListStart
+\item Co-author of a conference paper based on my bachelor thesis -- Stochastic Regression Models for Improving Data Quality, Calibration and Interpolation of Air Pollution Data from Distributed Sensor Networks of Low-Quality Sensors (\href{https://www.researchgate.net/publication/331131928_Stochastische_Regressionsmodelle_zur_Verbesserung_der_Datenqualitat_Kalibrierung_und_Interpolation_von_Umwelt-und_Luftdaten_in_verteilten_Messnetzen_aus_Low-Cost_Sensoren}{\color{blue}\underline{Researchgate Item}}).
+\item Part of a team that ranked second in the (\href{https://www.meetup.com/Darmstadt-InnovationM-Round-Table/events/262603767/}{\color{blue}\underline{Code-2-Cloud Hackathon}}), organized by Merck and Accenture (8.07.2019 - 13.07.2019 in in Kronberg\textbackslash Darmstadt).
+\item Doing Open Source as a hobby by fixing bugs and implementing features in different projects on GitHub.
+\item Author of several small Emacs packages.
+\item Spoken languages: German, English, Bulgarian
+\resumeSubHeadingListEnd
+  
 %-------------------------------------------
 \end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
