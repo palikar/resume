@@ -13,53 +13,42 @@
 \usepackage{graphicx}
 \usepackage{tikz}
 \usepackage{wrapfig}
-
-\usepackage[charter]{mathdesign} % Bitstream Charter
-% \usepackage{newpxtext,newpxmath} % Palatino
-
+\usepackage[charter]{mathdesign}
 \pdfpkresolution=450
-
 \pagestyle{fancy}
-\fancyhf{} % clear all header and footer fields
+\fancyhf{}
 \fancyfoot{}
+
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
-
 \addtolength{\oddsidemargin}{-0.50in}
 \addtolength{\evensidemargin}{-0.50in}
 \addtolength{\textwidth}{1in}
 \addtolength{\topmargin}{-.5in}
 \addtolength{\textheight}{1.0in}
-
 \urlstyle{same}
-
 \raggedbottom
 \raggedright
 \setlength{\tabcolsep}{0in}
-
 \newcommand{\roundpic}[4][]{
   \tikz\node [circle, minimum width = #2,
-    path picture = {
-      \node [#1] at (path picture bounding box.center) {
-        \includegraphics[#3]{#4}};
-    }] {};}
+  path picture = {
+    \node [#1] at (path picture bounding box.center) {
+      \includegraphics[#3]{#4}};
+  }] {};}
 
-  
 \titleformat{\section}{
   \vspace{-6pt}\scshape\raggedright\large
 }{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
 
-
-%-------------------------
-% Custom commands
 \newcommand{\resumeItem}[2]{
-  \item\small{
+\item\small{
     \textbf{#1}{: #2 \vspace{-2pt}}
   }
 }
 
 \newcommand{\resumeItemNoBullet}[2]{
-  \item[]\small{
+\item[]\small{
     \hspace{-9pt}\textbf{#1}{: #2 \vspace{-6pt}}
   }
 }
@@ -67,9 +56,9 @@
 \newcommand{\resumeSubheading}[4]{
   \vspace{-1pt}\item[]
   \begin{tabular*}{0.98\textwidth}{l@{\extracolsep{\fill}}r}
-      \hspace{-10pt}\textbf{#1} & #2 \\
-      \hspace{-10pt}\textit{\small#3} & \textit{\small #4} \\
-    \end{tabular*}\vspace{-5pt}
+    \hspace{-10pt}\textbf{#1} & #2 \\
+    \hspace{-10pt}\textit{\small#3} & \textit{\small #4} \\
+  \end{tabular*}\vspace{-5pt}
 }
 
 \newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
@@ -77,20 +66,17 @@
 \renewcommand{\labelitemii}{$\circ$}
 
 \newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
-\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+  \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
 \newcommand{\resumeItemListStart}{\begin{itemize}}
-\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+  \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
 
-% custom commands
 \newcommand{\shorterSection}[1]{\vspace{-10pt}\section{#1}}
 
-%-------------------------------------------
-%%%%%%  CV STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 \begin{document}
-%----------HEADING-----------------
 
+% ----------HEADING-----------------
 \begin{figure}[!htb]
   \begin{minipage}{.5\textwidth}
     \begin{flushleft}
@@ -108,8 +94,8 @@
   \end{minipage}
 \end{figure}
 
-  
-%-----------EDUCATION-----------------
+
+% -----------EDUCATION-----------------
 \shorterSection{Education}
 \resumeSubHeadingListStart
 
@@ -132,7 +118,7 @@
 
 \resumeSubHeadingListEnd
 
-%-----------SKILLS-----------------
+% -----------SKILLS-----------------
 \shorterSection{Skills}
 \resumeSubHeadingListStart
 \resumeSubheading{Programming Languages}{}{\vspace{-5pt}}{}
@@ -146,7 +132,7 @@ PyTorch, TensorFlow, Keras, Scikit-Learn, Numpy, Pandas, PyTorch, OpenCV, PCL (P
 \resumeSubHeadingListEnd
 \vspace{7pt}
 
-%-----------EXPERIENCE-----------------
+% -----------EXPERIENCE-----------------
 \shorterSection{Experience}
 \resumeSubHeadingListStart
 
@@ -189,7 +175,7 @@ PyTorch, TensorFlow, Keras, Scikit-Learn, Numpy, Pandas, PyTorch, OpenCV, PCL (P
 \resumeSubHeadingListEnd
 
 
-%-----------PROJECTS-----------------
+% -----------PROJECTS-----------------
 \shorterSection{Projects}
 \resumeSubHeadingListStart
 
@@ -242,7 +228,7 @@ PyTorch, TensorFlow, Keras, Scikit-Learn, Numpy, Pandas, PyTorch, OpenCV, PCL (P
 
 \resumeSubHeadingListEnd
 
-%-----------Addtional Experience & Achievements-----------------
+% -----------Addtional Experience & Achievements-----------------
 \shorterSection{Additional Experience \& Achievements}
 
 \resumeSubHeadingListStart
@@ -251,9 +237,9 @@ PyTorch, TensorFlow, Keras, Scikit-Learn, Numpy, Pandas, PyTorch, OpenCV, PCL (P
 \item Doing Open Source as a hobby by fixing bugs and implementing features in different projects on GitHub.
 \item Author of several small Emacs packages.
 \item Spoken languages: German, English, Bulgarian
-\resumeSubHeadingListEnd
+  \resumeSubHeadingListEnd
   
-%-------------------------------------------
+  % -------------------------------------------
 \end{document}
 
 %%% Local Variables:
