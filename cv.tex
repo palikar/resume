@@ -14,10 +14,12 @@
 \usepackage{tikz}
 \usepackage{wrapfig}
 \usepackage[charter]{mathdesign}
+\usepackage{numprint}
 \pdfpkresolution=450
 \pagestyle{fancy}
 \fancyhf{}
 \fancyfoot{}
+\npthousandsep{\,}
 
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
@@ -81,10 +83,11 @@
   \begin{minipage}{.5\textwidth}
     \begin{flushleft}
       \vspace{1.3cm}
-      \small \textbf{\href{palikar.github.io}{\huge Stanislav Arnaudov}} \\  \href{mailto:stanislav.arnaudov@kit.edu}{\color{blue}\underline{stanislav.arnaudov@kit.edu@kit.edu}} $\vert$
+      \small \textbf{\huge Stanislav Arnaudov} \\  \href{mailto:stanislav.arnaudov@kit.edu}{\color{blue}\underline{stanislav.arnaudov@kit.edu@kit.edu}} $\vert$
       LinkedIn: \href{https://www.linkedin.com/in/stanislav-arnaudov-37b475164/}{\color{blue}\underline{Arnaudov}} $\vert$\\
       Github: \href{https://github.com/palikar}{\color{blue}\underline{Arnaudov}} \\
-      \small Karlsruhe, Germany\\
+      \small Däumlingweg 4,
+      \small Karlsruhe 76199, Germany\\
     \end{flushleft}
   \end{minipage}%
   \begin{minipage}{0.5\textwidth}
@@ -100,10 +103,11 @@
 \resumeSubHeadingListStart
 
 \resumeSubheading
-{Master of Science in Informatics}{Expected Sep 2020}
+{Master of Science in Informatics}{Expected Sep 2021}
 {Karlsruhe Institute of Technology}{Karlsruhe, Germany}
 \resumeItemListStart
 \resumeItem{Relevant Coursework}{Image processing, Computer Vision, Machine Learning, Software Engineering}
+\resumeItem{Practical Courses}{Practice in Research}
 \resumeItemListEnd
 
 \vspace{10pt}
@@ -122,13 +126,11 @@
 \shorterSection{Skills}
 \resumeSubHeadingListStart
 \resumeSubheading{Programming Languages}{}{\vspace{-5pt}}{}
-C++, Python, Java, JavaScript\textbackslash CSS\textbackslash HTML, SQL, Emacs-Lisp
+C++, Python, Java, JavaScript\textbackslash CSS\textbackslash HTML, Go, SQL, Emacs-Lisp
 \resumeSubheading{Technologies}{}{\vspace{-5pt}}{}
-Linux, Git, CMake, make, Robot Operating System (ROS), RabbitMQ, JavaFX/Java-Swing, JUnit, Maven, Frontend (AngularJS, VueJS), Backend (NodeJS, Express, Flask), LaTeX, Emacs Org-mode, UML
-\resumeSubheading{Libraries}{}{\vspace{-5pt}}{}
-
-\vspace{-5pt}
-PyTorch, TensorFlow, Keras, Scikit-Learn, Numpy, Pandas, PyTorch, OpenCV, PCL (Point Cloud Library), OpenNI
+Linux, Git, CMake, make, Robot Operating System (ROS), RabbitMQ, JavaFX/Java-Swing, JUnit, Maven, Frontend (AngularJS, VueJS), Backend (NodeJS, Express, Flask), OpenGL3/4, LaTeX, Emacs Org-mode, UML
+\resumeSubheading{Software Libraries}{}{\vspace{-5pt}}{}
+PyTorch, TensorFlow, Keras, Scikit-Learn, Numpy, Pandas, PyTorch, OpenCV, PCL (Point Cloud Library), OpenNI, GLFW, GLSL
 \resumeSubHeadingListEnd
 \vspace{7pt}
 
@@ -179,8 +181,22 @@ PyTorch, TensorFlow, Keras, Scikit-Learn, Numpy, Pandas, PyTorch, OpenCV, PCL (P
 \shorterSection{Projects}
 \resumeSubHeadingListStart
 
+
+\resumeSubItem{Practical Course in Scientific Research}
+{\href{https://github.com/palikar/flow_predict}{\color{blue}\underline{Towards Bringing Together Numerical Methods for Partial Differential Equation and Deep Neural Networks}}
+  \vspace{-5pt}
+  \begin{itemize}
+  \item Developing a personal research project.
+  \item Investigating the current State-of-the-Art approaches.
+  \item Developing a concrete research proposal.
+  \item Conducting the actual project, performing experiments, summarizing results and drawing conclusions.
+  \item Writing a paper that illustrates the results of the project.
+  \end{itemize}
+}
+
 \resumeSubItem{Bachelor Thesis}
-{Creating and Evaluating Stochastic Regression Models on the Basis of Heterogeneous Sensor Networks for Air Pollution
+{
+  \href{https://github.com/palikar/PollutionDev/}{\color{blue}\underline{Creating and Evaluating Stochastic Regression Models on the Basis of Heterogeneous Sensor Networks for Air Pollution}}
   \vspace{-5pt}
   \begin{itemize}
   \item Implementing stochastic regression models with Tensorflow, Edward and GPFlow.
@@ -209,11 +225,28 @@ PyTorch, TensorFlow, Keras, Scikit-Learn, Numpy, Pandas, PyTorch, OpenCV, PCL (P
 }
 
 \resumeSubItem{Course Project}
-{Smart Homeworks
+{\href{https://github.com/palikar/HomeworksSmart/}{\color{blue}\underline{Smart Homeworks}}
   \vspace{-5pt}
   \begin{itemize}
   \item Single page application for helping with the organization of homework assignments.\@
   \item Written in VueJS.\@
+  \end{itemize}
+}
+
+\resumeSubItem{Personal Project}
+{\href{https://github.com/palikar/alisp}{\color{blue}\underline{Alisp}}
+  \vspace{-5pt}
+  \begin{itemize}
+  \item A general purpose programming language based on a Lisp
+  \item Written in C++ and currently has around \numprint{25000} lines of code.\@
+  \end{itemize}
+}
+
+\resumeSubItem{Personal Project}
+{\href{https://github.com/palikar/anything}{\color{blue}\underline{Anything}}
+  \vspace{-5pt}
+  \begin{itemize}
+  \item A 3d game engine written from scratch in C++ using OpenGL4.
   \end{itemize}
 }
 
@@ -234,7 +267,7 @@ PyTorch, TensorFlow, Keras, Scikit-Learn, Numpy, Pandas, PyTorch, OpenCV, PCL (P
 \resumeSubHeadingListStart
 \item Co-author of a conference paper based on my bachelor thesis -- Stochastic Regression Models for Improving Data Quality, Calibration and Interpolation of Air Pollution Data from Distributed Sensor Networks of Low-Quality Sensors (\href{https://www.researchgate.net/publication/331131928_Stochastische_Regressionsmodelle_zur_Verbesserung_der_Datenqualitat_Kalibrierung_und_Interpolation_von_Umwelt-und_Luftdaten_in_verteilten_Messnetzen_aus_Low-Cost_Sensoren}{\color{blue}\underline{Researchgate Item}}).
 \item Part of a team that ranked second in the (\href{https://www.meetup.com/Darmstadt-InnovationM-Round-Table/events/262603767/}{\color{blue}\underline{Code-2-Cloud Hackathon}}), organized by Merck and Accenture (8.07.2019 - 13.07.2019 in in Kronberg\textbackslash Darmstadt).
-\item Doing Open Source as a hobby by fixing bugs and implementing features in different projects on GitHub.
+\item Doing Open Source as a hobby by fixing bugs and implementing features in different projects on {\href{https://github.com/palikar/}{\color{blue}\underline{GitHub}}.
 \item Author of several small Emacs packages.
 \item Spoken languages: German, English, Bulgarian
   \resumeSubHeadingListEnd
